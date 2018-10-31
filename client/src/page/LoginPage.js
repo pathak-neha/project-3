@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../compoment/Login"
+import Login from "../components/Login"
 
 const loginPage = props => (
     <div className="jumbotron jumbotron-fluid">

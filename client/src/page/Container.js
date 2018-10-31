@@ -1,4 +1,4 @@
-import Navbar from "../compoment/Navbar"
+import Navbar from "../components/Navbar"
 import LoginPage from "./LoginPage"
 import DashBoard from "./DashBoard"
 import Features from "./Features"
