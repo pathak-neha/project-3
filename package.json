@@ -18,8 +18,9 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.15.4",
     "mongoose": "^5.3.6",
-    "moongoose": "0.0.5"
+    "morgan": "^1.9.1"
   }
 }
