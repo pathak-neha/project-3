@@ -5,6 +5,7 @@ import Dashboard from "./pages/DashBoard";
 import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
+// import "./App.css"
 
 const App = () => (
   <Router>
@@ -16,7 +17,7 @@ const App = () => (
         <Route exact path="/about" component={About} />
         <Route exact path="/features" component={Features} />
       </Switch>
-    </div>
+      </div>
   </Router>
 );
 
