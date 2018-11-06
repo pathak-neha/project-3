@@ -21,6 +21,14 @@ class Login extends Component {
         }
     };
 
+<<<<<<< HEAD
+=======
+    divertToSignUp = event => {
+        event.preventDefault();
+        
+    };
+
+>>>>>>> 54e6bcfea9f2bcef74d9af3bdbd3b44f834491ac
     render() {
         return (
             <form>
