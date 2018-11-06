@@ -3,7 +3,9 @@ const projectRoutes = require("./projects");
 const reviewRoutes = require("./reviews");
 const userRoutes = require("./users");
 
-// Book routes
+// project routes
 router.use("/project", projectRoutes);
+router.use("/users", userRoutes);
+
 
 module.exports = router;

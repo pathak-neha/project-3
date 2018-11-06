@@ -21,13 +21,6 @@ class Login extends Component {
         }
     };
 
-    divertToSignUp = event => {
-        event.preventDefault();
-        if (this.state.username && this.state.password) {
-            // add some code here
-        }
-    };
-
     render() {
         return (
             <form>
@@ -62,7 +55,7 @@ class Login extends Component {
                     onClick={this.handleFormSubmit}>
                     SUBMIT
                 </button>
-                &nbsp;or <button className="btn btn-secondary">SIGN UP</button>
+                &nbsp;or <button className="btn btn-secondary"><a href="./CreateUser">SIGN UP</a></button>
             </form>
         )
     }

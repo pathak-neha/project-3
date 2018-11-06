@@ -5,6 +5,7 @@ import Dashboard from "./pages/DashBoard";
 import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
+import CreateUser from "./components/CreateUser"
 // import "./App.css"
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/about" component={About} />
         <Route exact path="/features" component={Features} />
+        <Route exact path="/CreateUser" component={CreateUser} />
       </Switch>
       </div>
   </Router>

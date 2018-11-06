@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const path=require("path")
+const bodyParser = require("body-parser")
+const PORT =3001;
 // const reviewController = require("../../controllers/reviewController");
 
 
@@ -14,15 +16,14 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rateMyProject", { useNewUrlParser: true });
 // console.log(reviewController.findAll())
 app.use(routes);
+app.use(bodyParser.json())
 
 // Send every request to the React app
 // Define any API routes before this runs
-// app.get("*", function(req, res) {
-//   res.sendFile(path.join(__dirname, "./client/public/index.html"));
-// });
-app.get("/",function(req,res) {
-  res.send('hi')
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
+
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
