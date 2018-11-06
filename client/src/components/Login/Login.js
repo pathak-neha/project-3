@@ -23,9 +23,7 @@ class Login extends Component {
 
     divertToSignUp = event => {
         event.preventDefault();
-        if (this.state.username && this.state.password) {
-            // add some code here
-        }
+        
     };
 
     render() {

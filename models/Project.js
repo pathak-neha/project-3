@@ -8,6 +8,14 @@ const projectSchema = new Schema({
   imageURL:{type:String},
   destription: { type: String},
   keywords:{type:Array},
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  reviews: [{
+    type: Schema.Types.ObjectId,
+    ref: "Review"
+  }]
 });
 
 const Project = mongoose.model("Project", projectSchema);
