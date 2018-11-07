@@ -1,0 +1,33 @@
+
+#hero-bg {
+    min-height: 500px;
+    background: url("https://hbr.org/resources/images/article_assets/2017/06/jun17-14-70784491-1200x675.jpg");
+    background-size: 100%;
+    background-position:center center;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    z-index:1;
+}
+
+.display-4, .lead, .my-4, .white-text {
+    color: white;
+    border-color: white
+}
+
+.l-grey-text {
+    color: grey
+}
+
+.highlight-black {
+    background: rgba(0,0,0,0.5)
+}
+
+.attn-text {
+    font-size: 36px;
+}
+
+.banner {
+    width: 100%
+}

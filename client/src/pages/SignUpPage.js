@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Login from "../components/Login"
+import SignUp from "../components/SignUp"
 import "./styles.css"
 
-const loginPage = (props) => (
+const signUpPage = (props) => (
     <div>
         <div className="jumbotron jumbotron-fluid" id="hero-bg">
             <div className="container">
                 <div className="row justify-content-center">
-                    <Login />
+                    <SignUp />
                 </div>
             </div>
 
@@ -15,4 +15,4 @@ const loginPage = (props) => (
     </div>
 )
 
-export default loginPage;
+export default signUpPage;

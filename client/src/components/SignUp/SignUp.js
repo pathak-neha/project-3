@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import "./Login.css";
+import "./SignUp.css";
+import API from "../../utils/API"
 
-class Login extends Component {
+class SignUp extends Component {
     state = {
+        firstName: "",
+        lastName: "",
+        password: "",
         email: "",
-        password: ""
+        cell: "",
+        imageURL: "",
     };
 
     handleInputChange = event => {
@@ -16,32 +21,46 @@ class Login extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.username && this.state.password) {
-            // add some code here
+        if (this.state.email && this.state.password) {
+            API.createUser({
+                firstName: this.state.firstName,
+                lastName: this.state.firstName,
+                password: this.state.password,
+                email: this.state.email,
+                cell: this.state.cell,
+                imageURL: this.state.imageURL
+            })
         }
     };
 
     render() {
         return (
             <form>
+                <div className="form-row">
+                    <div className="col">
+                        <input type="text" className="form-control" placeholder="First name"
+                            name="firstName" value={this.state.firstName} onChange={this.handleInputChange} />
+                    </div>
+                    <div className="col">
+                        <input type="text" className="form-control" placeholder="Last name"
+                            name="lastName" value={this.state.lastName} onChange={this.handleInputChange} />
+                    </div>
+                </div> <br />
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">EMAIL ADDRESS</label>
                     <input
                         type="email"
                         className="form-control"
-                        id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                         placeholder="Enter email (required)"
                         name="email"
                         value={this.state.email}
                         onChange={this.handleInputChange} />
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">PASSWORD</label>
                     <input
                         type="password"
                         className="form-control"
-                        id="exampleInputPassword1"
                         placeholder="Password (required)"
                         name="password"
                         value={this.state.password}
@@ -54,10 +73,10 @@ class Login extends Component {
                     onClick={this.handleFormSubmit}>
                     SUBMIT
                 </button>
-                &nbsp;or <a className="btn btn-secondary" href="./signup">SIGN UP</a>
+                &nbsp;or <a className="btn btn-secondary" href="/">BACK TO LOGIN</a>
             </form>
         )
     }
 }
 
-export default Login;
+export default SignUp;
