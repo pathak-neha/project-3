@@ -5,7 +5,8 @@ import Dashboard from "./pages/DashBoard";
 import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
-import CreateUser from "./components/CreateUser"
+import CreateUser from "./pages/UserDash"
+import CreateProject from "./pages/ProjectDash"
 // import "./App.css"
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/about" component={About} />
         <Route exact path="/features" component={Features} />
         <Route exact path="/CreateUser" component={CreateUser} />
+        <Route exact path="/CreateProject" component={CreateProject} />
       </Switch>
       </div>
   </Router>

@@ -19,7 +19,7 @@ class createUser extends Component {
     };
     handleFormSubmit = event => {
         event.preventDefault();
-       // if (this.state.userName && this.state.Password && this.state.lastName && this.state.firstName) {
+        if (this.state.userName && this.state.Password && this.state.lastName && this.state.firstName) {
             API.createUser({
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
@@ -31,7 +31,7 @@ class createUser extends Component {
             }).then(res=>{console.log(res)}
                )
                 .catch(err => console.log(err));
-        
+        }
     }
 
 

@@ -24,9 +24,9 @@ app.use(routes);
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
-app.get("/",function(req,res) {
-  res.send('hi')
-});
+// app.get("/",function(req,res) {
+//   res.send('hi')
+// });
 
 app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);

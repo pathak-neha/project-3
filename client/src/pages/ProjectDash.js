@@ -1,9 +1,8 @@
 import React from "react"
-import CreateUser from "../components/CreateUser"
+import CreateProject from "../components/CreateProject"
 const createUser = props => (
     <div>
-        {props.childern}
-        <CreateUser />
+        <CreateProject {...props}  />
     </div>
 )
 export default createUser;
