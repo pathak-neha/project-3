@@ -1,5 +1,6 @@
 import React from "react";
-// import "./UserBadge.css";
+import "./UserBadge.css";
+import { Link } from "react-router-dom";
 
 const UserBadge = (props) => (
   <div>
@@ -12,7 +13,8 @@ const UserBadge = (props) => (
             <a href="#">{props.user.projects.length} Projects</a>
           </h6>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">Settings</li>
+            <li className="list-group-item">
+            Settings</li>
             <li className="list-group-item">Create a Project</li>
           </ul>
       </div>

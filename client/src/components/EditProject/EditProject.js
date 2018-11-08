@@ -1,33 +1,26 @@
 import React, { Component } from "react";
-import "./EditUser.css";
+import "./EditProject.css";
 import API from "../../API/API.js"
 
 class createProject extends Component {
     state = {
-        projectName: "",
-        repoURL: "",
-        appURL: "",
-        imageURL: "",
-        destription: "",
-        keywords: "",
+        project:[],
+
     }
-    componentDidMount() {
+    componentWillMount() {
         this.loadProject();
     }
 
     loadProject = () => {
-        API.getProject(id)
+        API.getProject()
             .then(res => {
                 this.setState({
-                    projectName: res.projectName,
-                    repoURL: res.repoURL,
-                    appURL: res.appURL,
-                    imageURL: res.imageURL,
-                    destription: res.destription,
-                    keywords: res.keywords
                 })
-            })
+            }
+            ).catch(err => console.log(err));
     }
+
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({

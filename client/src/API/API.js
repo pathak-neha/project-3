@@ -10,10 +10,11 @@ export default {
   createProject:function(data){
     return axios.post("/api/projects",data)
   },
-  getProject:function(id){
-    return axios.get("/api/projects"+id)
+  getProject:function(){
+    return axios.get("/api/projects")
   },
-  updateProject:function(id){
-    return axios.put("/api/projects"+id)
-  }
+  updateProject:function(data){
+    return axios.put("/api/projects",data)
+  } 
+
 };
