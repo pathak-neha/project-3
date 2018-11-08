@@ -7,21 +7,64 @@ import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
 import SignUp from "./pages/SignUpPage";
+import CreateUser from "./components/CreateUser";
+import API from "./API/API.js"
 // import "./App.css"
 
+
+
 class App extends React.Component {
-  
-  handleLogin = (userInfo) => {
-    this.setState({ 
-      id: userInfo._id,
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      email: userInfo.email,
-      cell: userInfo.cell,
-      imageURL: userInfo.imageURL,
-      projects: [...userInfo.projects],
-    });
+  state = {
+    user: {
+      id: "",
+      firstName: "",
+      lastName: "",
+      projects: [
+        {
+          name: "Project 1",
+          rating: 4.5
+        },
+        {
+          name: "Project 2",
+          rating: 4
+        },
+        {
+          name: "Project 3",
+          rating: 5
+        }
+      ]
+    },
+    allProject: {
+      projects: []
+    }
   }
+  handleLogin = () => {
+    //this is where the auth goes
+    
+    
+  }
+  //This is where the ID eventually passed in
+  passToTheTop = (personID) => {
+    this.setState({
+      user: { id: personID }
+    })
+    console.log("top level")
+    console.log(this.state.user.id)
+    API.getOneUser(this.state.user.id)
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          user: {
+            id: res.data.id,
+            firstName: res.data.firstName,
+            lastName: res.data.lastName,
+            projects: res.data.projects
+          }
+        })
+        console.log(this.state.user.firstName)
+      })
+  }
+
 
   render() {
     return (
@@ -29,12 +72,24 @@ class App extends React.Component {
         <div>
           <Nav />
           <Switch>
-            <Route exact path="/" component={Login} onChange={this.handleLogin} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/" render={
+              () => <Login onChange={this.handleLogin} passtoTOP={this.passToTheTop} />
+            } />
+            {/* <Route exact path="/" component={Login} onChange={this.handleLogin} passToTheTop={this.passChildId} /> */}
+            <Route exact path="/dashboard" render={
+              () => <Dashboard 
+                //passtoTOP={this.passtobottomrID}
+                key={this.state.user.id}
+                id={this.state.user.id}
+                firstName={this.state.user.firstName}
+                lastName={this.state.user.lastName}
+                //image={this.state.user.image}
+                projects={this.state.user.projects}
+              />} />
             <Route exact path="/explore" component={Explore} />
             <Route exact path="/about" component={About} />
             <Route exact path="/features" component={Features} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/CreateUser" component={CreateUser} />
           </Switch>
         </div>
       </Router>)

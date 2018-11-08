@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./Login.css";
+import API from "../../API/API";
+
 
 class Login extends Component {
     state = {
         email: "",
-        password: ""
+        password: "",
+        user: []
     };
 
     handleInputChange = event => {
@@ -16,9 +19,23 @@ class Login extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.username && this.state.password) {
-            // add some code here
-        }
+        //if (this.state.username && this.state.password) {
+        //What this is doing is getting the user from the data base, and returning it up to the login page
+        API.getUser()
+            .then(res => {
+                this.setState({
+                    email: "",
+                    password: "",
+                    user: res.data
+                })
+                console.log(this.state.user)
+                var id=this.state.user[2]._id;
+                this.props.setParrentId(id);
+            })
+            .catch(err => console.log(err));
+        
+       
+        //}
     };
 
     render() {
@@ -54,7 +71,7 @@ class Login extends Component {
                     onClick={this.handleFormSubmit}>
                     SUBMIT
                 </button>
-                &nbsp;or <a className="btn btn-secondary" href="./signup">SIGN UP</a>
+                &nbsp;or <button className="btn btn-secondary"><a href="./CreateUser">SIGN UP</a></button>
             </form>
         )
     }

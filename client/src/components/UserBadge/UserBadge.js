@@ -1,5 +1,6 @@
 import React from "react";
-// import "./UserBadge.css";
+import "./UserBadge.css";
+import { Link } from "react-router-dom";
 
 const UserBadge = (props) => (
   <div>
@@ -18,6 +19,6 @@ const UserBadge = (props) => (
       </div>
       </div>
     </div>
-    );
-    
+);
+
 export default UserBadge;
