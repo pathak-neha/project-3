@@ -7,6 +7,7 @@ import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
 import SignUp from "./pages/SignUpPage";
+import CreateUser from "./components/CreateUser";
 import API from "./API/API.js"
 // import "./App.css"
 
@@ -88,7 +89,7 @@ class App extends React.Component {
             <Route exact path="/explore" component={Explore} />
             <Route exact path="/about" component={About} />
             <Route exact path="/features" component={Features} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/CreateUser" component={CreateUser} />
           </Switch>
         </div>
       </Router>)

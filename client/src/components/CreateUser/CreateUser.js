@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateUser.css";
 import API from "../../API/API.js"
+
 class createUser extends Component {
     state = {
         userName: "",
@@ -9,7 +10,7 @@ class createUser extends Component {
         Password: "",
         Email: "",
         Mobile: "",
-        imageUrl: "",
+        imageUrl:null,
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -17,6 +18,17 @@ class createUser extends Component {
             [name]: value
         });
     };
+    handleImgFile=event=>{
+        // const{name}=event.target;
+        // const {files}=event.target.files[0]
+        // this.setState({
+        //     [name]:files
+        // })
+        this.setState({
+            imageUrl:event.target.files[0]
+        })
+        // console.log(event)
+    }
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.userName && this.state.Password && this.state.lastName && this.state.firstName) {
@@ -78,7 +90,11 @@ class createUser extends Component {
                     <div className="input-group-prepend">
                         <label>
                             iMage URL (Optional):
-               <input type="text" name="imageUrl" value={this.state.imageUrl}  onChange={this.handleInputChange}/>
+               <input 
+               type="file" 
+               name="imageUrl" 
+            //    value={this.state.imageUrl} 
+               onChange={this.handleImgFile}/>
                         </label>
                     </div>
                     <button  type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Create user</button>
