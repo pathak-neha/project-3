@@ -8,12 +8,7 @@ class ProjectCard extends Component {
     ProjectName:"",
     ProjectRating:"",
   }
-  componentDidMount() {
-    this.review();
-}
-review=()=>{
 
-}
 
   render() {
     return (
