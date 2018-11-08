@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./CreateProject.css";
-import API from "../../API/API.js"
+import API from "../../utils/API.js"
 
 class createProject extends Component {
     state = {
