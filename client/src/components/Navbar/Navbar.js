@@ -1,8 +1,8 @@
 import React from "react";
-// import "./Navbar.css";
+import "./Navbar.css";
 
 const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light override-nav">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark override-nav">
     <a className="navbar-brand" href="#">Rate My Project</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -14,6 +14,9 @@ const Navbar = () => (
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/explore">Explore</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/features">Features</a>
