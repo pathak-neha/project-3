@@ -9,7 +9,7 @@ const userSchema = new Schema({
   cell: String,
   imageURL: String,
   // dateCreated: { type: Date, default: Date.now },
-  projects: [{ 
+  projects: [{
     type: Schema.Types.ObjectId,
     ref: "Project"
   }]

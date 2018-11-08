@@ -6,7 +6,7 @@ const projectSchema = new Schema({
   repoURL: { type: String, required: true },
   appURL: { type: String, required: true },
   imageURL:{type:String},
-  destription: { type: String},
+  description: { type: String},
   keywords:{type:Array},
   creator: {
     type: Schema.Types.ObjectId,
