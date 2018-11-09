@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Userbadge from "../components/UserBadge";
 import ProjectCard from "../components/ProjectCard";
-import API from "../utils/API.js"
+import API from "../API/API.js"
 
 
 // class DashBoard extends Component {

@@ -7,8 +7,8 @@ import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
 import SignUp from "./pages/SignUpPage";
-import CreateProject from "./components/CreateProject";
-import API from "./utils/API.js"
+import CreateUser from "./components/CreateUser";
+import API from "./API/API.js"
 // import "./App.css"
 
 
@@ -43,7 +43,6 @@ class App extends React.Component {
     
     
   }
-
   //This is where the ID eventually passed in
   passToTheTop = (personID) => {
     this.setState({
@@ -88,10 +87,9 @@ class App extends React.Component {
                 projects={this.state.user.projects}
               />} />
             <Route exact path="/explore" component={Explore} />
-            <Route exact path="/create-project" component={CreateProject} />
             <Route exact path="/about" component={About} />
             <Route exact path="/features" component={Features} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/CreateUser" component={CreateUser} />
           </Switch>
         </div>
       </Router>)

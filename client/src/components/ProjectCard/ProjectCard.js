@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ProjectCard.css";
-import API from "../../utils/API.js"
+import API from "../../API/API.js"
 
 class ProjectCard extends Component {
   state={
