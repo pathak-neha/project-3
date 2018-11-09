@@ -18,7 +18,7 @@ module.exports = {
       .then(db => res.json(db))
       .catch(err => res.status(422).json(err));
   },
-  create: function (req, res,next) {
+  create: function (req, res) {
     
       console.log("inside create")
       console.log(req.file)
