@@ -45,6 +45,7 @@ class App extends React.Component {
   }
   //This is where the ID eventually passed in
   passToTheTop = (personID) => {
+    localStorage.setItem(personID)
     this.setState({
       user: { id: personID }
     })

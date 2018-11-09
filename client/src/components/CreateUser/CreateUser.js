@@ -19,18 +19,17 @@ class createUser extends Component {
         });
     };
     handleImgFile=event=>{
-        // const{name}=event.target;
-        // const {files}=event.target.files[0]
-        // this.setState({
-        //     [name]:files
-        // })
+        
         this.setState({
-            imageUrl:event.target.files[0]
+            imageUrl:event.target.files[0],
         })
+        console.log("files")
+        console.log(event.target.files[0])
         // console.log(event)
     }
     handleFormSubmit = event => {
         event.preventDefault();
+        console.log(this.state.imageUrl)
         if (this.state.userName && this.state.Password && this.state.lastName && this.state.firstName) {
             API.createUser({
                 firstName: this.state.firstName,

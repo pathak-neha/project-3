@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Login.css";
+import { BrowserRouter as Link ,Router, Route, Switch } from "react-router-dom";
 import API from "../../API/API";
 
 
@@ -69,7 +70,7 @@ class Login extends Component {
                     className="btn btn-primary"
                     disabled={!(this.state.email && this.state.password)}
                     onClick={this.handleFormSubmit}>
-                    SUBMIT
+                    Submit
                 </button>
                 &nbsp;or <button className="btn btn-secondary"><a href="./CreateUser">SIGN UP</a></button>
             </form>

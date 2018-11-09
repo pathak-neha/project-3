@@ -8,7 +8,7 @@ const upload = multer({ dest: 'imgs/' })
 router.route("/")
   .get(userController.findAll)
   .post(
-    upload.single("imageURL"),
+    upload.single("imageUrl"),
     userController.create
 );
 
