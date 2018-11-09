@@ -18,6 +18,14 @@ const userSeed = [
    imageUrl: "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_960_720.png"
   },
   {
+    firstName: "Cole",
+    lastName: "C",
+    password: "coleo",
+    email: "coleo@gmail.com",
+    cell: "647 449 3333",
+    imageUrl: "https://www.w3schools.com/howto/img_avatar3.png"
+   }, 
+  {
    firstName: "Eve",
    lastName: "E",
    password: "evee",

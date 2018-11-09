@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ProjectCard.css";
-import API from "../../API/API.js"
+import API from "../../utils/APII";
 
 class ProjectCard extends Component {
   state={
@@ -8,6 +8,34 @@ class ProjectCard extends Component {
     ProjectName:"",
     ProjectRating:"",
   }
+  componentDidMount() {
+    this.allUsers();
+  }
+  allUsers = () => {
+    API.getAllProjects()
+    .then(res => {
+      if(res) {
+        console.log(res.data);
+
+        var data = [];
+        for ( var i = 0; i < res.data.length; i++) {
+          var name = res.data[i].projectName;
+          var reviews = res.data[i].reviews;
+
+          this.setState({
+            Review:reviews,
+            ProjectName: name,
+            ProjectRating: "",
+          })
+  
+
+        }
+       
+
+
+      }
+      })
+    }
 
 
   render() {
