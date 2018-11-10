@@ -19,14 +19,13 @@ module.exports = {
   },
   create: function (req, res) {
       console.log("inside create")
-      console.log(req.file.path)
       const newUser = new db.User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         password: req.body.password,
         email: req.body.email,
         cell: req.body.cell,
-        imageURL: req.file.filename,
+        imageURL: req.file.path,
         // dateCreated: { type: Date, default: Date.now },
       });
       console.log(`creating document for: \n ${JSON.stringify(req.body)}`)

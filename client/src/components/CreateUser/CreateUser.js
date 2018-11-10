@@ -71,7 +71,7 @@ class createUser extends Component {
                     <div className="col">
                         <label>
                             iMage URL (Optional):
-                           <input
+                           <input 
                                 type="file"
                                 name="imageUrl"
                                 //    value={this.state.imageUrl} 
