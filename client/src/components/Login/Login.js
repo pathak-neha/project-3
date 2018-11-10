@@ -31,7 +31,7 @@ class Login extends Component {
                     user: res.data
                 })
                 console.log(this.state.user)
-                var id=this.state.user[0]._id;
+                var id=this.state.user[7]._id;
                 localStorage.setItem("id",id)
             })
             .catch(err => console.log(err));

@@ -11,6 +11,7 @@ class DashBoard extends Component {
         lastName: "",
         projects: [],
         reviews:[],
+        imgUrl:"",
     }
 
     componentDidMount() {
@@ -25,21 +26,24 @@ class DashBoard extends Component {
                 var temp2=res.data.firstName
                 var temp3=res.data.lastName
                 var temp4=res.data.projects
+                var temp5="\"../../"+res.data.imageURL+"\""
+                console.log(res.data)
             
                 //console.log(res.data.projects)
-                console.log(temp4)
-                API.getOneReview(temp4[0].reviews[0])
-                    .then(res => {
+                console.log(temp5)
+               // API.getOneReview(temp4[0].reviews[0])
+                    //.then(res => {
                         this.setState({
                             id:temp1,
                             firstName:temp2,
                             lastName:temp3,
-                            projects:temp4,
-                            reviews:res.data
+                           // projects:temp4,
+                           // reviews:res.data,
+                            imgUrl:temp5
                         })
                         console.log(this.state.reviews)
-                    })
-            })
+                    //})
+           })
        
 
     }
@@ -53,7 +57,7 @@ class DashBoard extends Component {
                                 firstName={this.state.firstName}
                                 lastName={this.state.lastName}
                                 projects={this.state.projects}
-                                imageURL={this.state.imageURL} />
+                                imageURL={this.state.imgUrl} />
                         </div><br />
                     </div>
                 </div>

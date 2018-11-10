@@ -3,7 +3,7 @@ const userController = require("../../controllers/userController");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'imgs/');
+    cb(null, '../project-3/client/src/imgs/');
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
