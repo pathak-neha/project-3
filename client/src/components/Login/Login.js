@@ -20,6 +20,7 @@ class Login extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        localStorage.removeItem("id")
         //if (this.state.username && this.state.password) {
         //What this is doing is getting the user from the data base, and returning it up to the login page
         API.getUser()
@@ -30,8 +31,8 @@ class Login extends Component {
                     user: res.data
                 })
                 console.log(this.state.user)
-                var id=this.state.user[2]._id;
-                this.props.setParrentId(id);
+                var id=this.state.user[0]._id;
+                localStorage.setItem("id",id)
             })
             .catch(err => console.log(err));
         
@@ -68,7 +69,7 @@ class Login extends Component {
                 <button
                     type="submit"
                     className="btn btn-primary"
-                    disabled={!(this.state.email && this.state.password)}
+                    //disabled={!(this.state.email && this.state.password)}
                     onClick={this.handleFormSubmit}>
                     Submit
                 </button>

@@ -6,7 +6,6 @@ import Explore from "./pages/Explore";
 import Features from "./pages/Features";
 import About from "./pages/AboutUs";
 import Nav from "./components/Navbar";
-import SignUp from "./pages/SignUpPage";
 import CreateUser from "./components/CreateUser";
 import API from "./API/API.js"
 // import "./App.css"

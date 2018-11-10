@@ -1,5 +1,4 @@
 const db = require("../models");
-const multer = require('multer');
 
 
 // Defining methods for the UsersController

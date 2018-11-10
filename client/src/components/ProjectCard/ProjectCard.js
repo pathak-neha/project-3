@@ -3,39 +3,23 @@ import "./ProjectCard.css";
 import API from "../../utils/APII";
 
 class ProjectCard extends Component {
-  state={
-    Review:"",
-    ProjectName:"",
-    ProjectRating:"",
+  state = {
+    Review: "",
+    ProjectName: "",
+    ProjectRating: "",
   }
   componentDidMount() {
-    this.allUsers();
+    this.allUsers(this.props.id);
+    console.log(this.props.reviewID)
   }
   allUsers = () => {
-    API.getAllProjects()
-    .then(res => {
-      if(res) {
-        console.log(res.data);
-
-        var data = [];
-        for ( var i = 0; i < res.data.length; i++) {
-          var name = res.data[i].projectName;
-          var reviews = res.data[i].reviews;
-
-          this.setState({
-            Review:reviews,
-            ProjectName: name,
-            ProjectRating: "",
-          })
-  
-
-        }
-       
-
-
-      }
+      API.getOneReview(this.props.reviewID).then(res => {
+        console.log(res.data)
+        this.setState({
+          ProjectRating:res.data.rating
+        })
       })
-    }
+  }
 
 
   render() {
@@ -43,7 +27,7 @@ class ProjectCard extends Component {
       <div>
         <div className="card" style={{ width: "18rem" }}>
           <div className="card-body">
-            <h5 className="card-title">{this.state.ProjectName}</h5>
+            <h5 className="card-title">{this.props.name}</h5>
             <h6 className="card-subtitle">Rating: {this.state.ProjectRating}</h6>
             <fieldset className={`rating star-${this.state.id}`}>
               <input type="radio" id="star5" name="rating" value="5" /><label className="full" for="star5" title="Awesome - 5 stars"></label>
