@@ -1,7 +1,17 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
-const multer = require('multer');
-const upload = multer({ dest: 'imgs/' })
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'imgs/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+const upload = multer({
+  storage: storage,
+})
 
 
 // Matches with "/api/users"
@@ -10,7 +20,7 @@ router.route("/")
   .post(
     upload.single("imageUrl"),
     userController.create
-);
+  );
 
 // Matches with "/api/users/:id"
 router

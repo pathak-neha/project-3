@@ -34,10 +34,10 @@ class DashBoard extends Component {
                     <div className="row projects justify-content-center">
                         {this.state.projects.map(project => (
                             <ProjectCard
-                                // name={project.projectName}
-                                // id={project.id}
-                                // key={project.id}
-                                // rating={project.rating}
+                                name={project.projectName}
+                                id={project.id}
+                                key={project.id}
+                                rating={project.rating}
                             />)
                         )}
                     </div>

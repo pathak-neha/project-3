@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/rateMyProject", { useNewUrlParser: true });
 app.use(logger("dev"));
 app.use(routes);
-
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {

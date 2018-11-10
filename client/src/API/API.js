@@ -16,6 +16,12 @@ export default {
   getProject:function(){
     return axios.get("/api/projects")
   },
+  getOneProject:function(id){
+    return axios.get("/api/projects"+id)
+  },
+  getOneReview:function(id){
+    return axios.get("/api/reviews/"+id)
+  },
   updateProject:function(data){
     return axios.put("/api/projects",data)
   } 

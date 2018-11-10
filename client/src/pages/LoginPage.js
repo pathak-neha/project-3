@@ -11,11 +11,6 @@ class loginPage extends Component {
     //This is what i use to pass the ID upwards to the app.js
     //I don't know how to do storage and i think pass id to app and store it over there is better
     passChildId = (userId) => {
-        this.setState({
-            id: userId
-        })
-        console.log(this.state.id)
-        this.props.passtoTOP(userId)
         //this line is used to pass the id up the chain
     }
     
