@@ -1,7 +1,6 @@
 const db = require("../models");
 const multer = require('multer');
 
-
 // Defining methods for the UsersController
 module.exports = {
   findAll: function (req, res) {
@@ -19,9 +18,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res,next) {
-    
       console.log("inside create")
-      console.log(req.file)
+      // console.log(req.file)
       const newUser = new db.User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -36,7 +34,6 @@ module.exports = {
         .create(newUser)
         .then(function (req, data) { res.send(data) })
         .catch(err => res.status(422).json(err));
-    
   },
   update: function (req, res) {
     db.User

@@ -11,28 +11,13 @@ import CreateProject from "./components/CreateProject";
 import API from "./utils/API.js"
 // import "./App.css"
 
-
-
 class App extends React.Component {
   state = {
     user: {
       id: "",
       firstName: "",
       lastName: "",
-      projects: [
-        {
-          name: "Project 1",
-          rating: 4.5
-        },
-        {
-          name: "Project 2",
-          rating: 4
-        },
-        {
-          name: "Project 3",
-          rating: 5
-        }
-      ]
+      projects: []
     },
     allProject: {
       projects: []
