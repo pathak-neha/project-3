@@ -71,6 +71,7 @@ class Login extends Component {
                     className="btn btn-primary"
                     //disabled={!(this.state.email && this.state.password)}
                     onClick={this.handleFormSubmit}>
+                    <a href="./dashboard"></a>
                     Submit
                 </button>
                 &nbsp;or <button className="btn btn-secondary"><a href="./CreateUser">SIGN UP</a></button>

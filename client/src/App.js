@@ -43,27 +43,27 @@ class App extends React.Component {
     
   }
   //This is where the ID eventually passed in
-  passToTheTop = (personID) => {
-    localStorage.setItem(personID)
-    this.setState({
-      user: { id: personID }
-    })
-    console.log("top level")
-    console.log(this.state.user.id)
-    API.getOneUser(this.state.user.id)
-      .then(res => {
-        console.log(res.data)
-        this.setState({
-          user: {
-            id: res.data.id,
-            firstName: res.data.firstName,
-            lastName: res.data.lastName,
-            projects: res.data.projects
-          }
-        })
-        console.log(this.state.user.firstName)
-      })
-  }
+  // passToTheTop = (personID) => {
+  //   localStorage.setItem(personID)
+  //   this.setState({
+  //     user: { id: personID }
+  //   })
+  //   console.log("top level")
+  //   console.log(this.state.user.id)
+  //   API.getOneUser(this.state.user.id)
+  //     .then(res => {
+  //       console.log(res.data)
+  //       this.setState({
+  //         user: {
+  //           id: res.data.id,
+  //           firstName: res.data.firstName,
+  //           lastName: res.data.lastName,
+  //           projects: res.data.projects
+  //         }
+  //       })
+  //       console.log(this.state.user.firstName)
+  //     })
+  // }
 
 
   render() {
@@ -77,15 +77,7 @@ class App extends React.Component {
             } />
             {/* <Route exact path="/" component={Login} onChange={this.handleLogin} passToTheTop={this.passChildId} /> */}
             <Route exact path="/dashboard" render={
-              () => <Dashboard 
-                //passtoTOP={this.passtobottomrID}
-                key={this.state.user.id}
-                id={this.state.user.id}
-                firstName={this.state.user.firstName}
-                lastName={this.state.user.lastName}
-                //image={this.state.user.image}
-                projects={this.state.user.projects}
-              />} />
+              () => <Dashboard />} />
             <Route exact path="/explore" component={Explore} />
             <Route exact path="/about" component={About} />
             <Route exact path="/features" component={Features} />

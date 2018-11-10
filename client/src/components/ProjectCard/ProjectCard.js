@@ -41,6 +41,7 @@ class ProjectCard extends Component {
               <input type="radio" id="star1" name="rating" value="1" /><label className="full" for="star1" title="Sucks big time - 1 star"></label>
               <input type="radio" id="starhalf" name="rating" value="half" /><label className="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
             </fieldset>
+            
           </div>
         </div>
       </div>
